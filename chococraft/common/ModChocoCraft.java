@@ -260,8 +260,8 @@ public class ModChocoCraft
 		TickRegistry.registerScheduledTickHandler(new ServerSpawnTickHandler(), Side.SERVER);
 	}
 
-	@PreInit
-	public void preLoadChocoCraft(FMLPreInitializationEvent preInitEvent)
+	@EventHandler
+	public void preLoadChocoCraft(FMLPreInitializationEvent event)
 	{
 		chocoboHeight = 1.9F;
 		chocoboWidth = 1.3F;
@@ -348,8 +348,8 @@ public class ModChocoCraft
     	proxy.registerEventListener();
 	}
 
-	@PostInit
-	public void postLoadChocoCraft(FMLPostInitializationEvent postInitEvent) {}
+	@EventHandler
+	public void postLoadChocoCraft(FMLPostInitializationEvent event) {}
 
 //	// initialising methods
 //	private void createCreativeTab()
