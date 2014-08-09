@@ -222,7 +222,7 @@ public class ModChocoCraft
 	public static CommonProxyChocoCraft proxy;
 
 	@Eventhandler
-	public void loadFMLInitializationEvent loadEvent)
+	public void load(FMLIntializationEvent event)
 	{
 		//this.createCreativeTab();
     	ChocoboConfig.readConfigFileInit();
