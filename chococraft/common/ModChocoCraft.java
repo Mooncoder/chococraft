@@ -49,10 +49,7 @@ import chococraft.common.network.ChocoboPacketHandler;
 import chococraft.common.tick.ServerSpawnTickHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -224,8 +221,8 @@ public class ModChocoCraft
 	@SidedProxy(clientSide = "chococraft.client.ClientProxyChocoCraft", serverSide = "chococraft.common.CommonProxyChocoCraft")
 	public static CommonProxyChocoCraft proxy;
 
-	@Init
-	public void loadChocoCraft(FMLInitializationEvent loadEvent)
+	@Eventhandler
+	public void loadFMLInitializationEvent loadEvent)
 	{
 		//this.createCreativeTab();
     	ChocoboConfig.readConfigFileInit();
@@ -258,7 +255,7 @@ public class ModChocoCraft
 	}
 
 	@EventHandler
-	public void preLoadChocoCraft(FMLPreInitializationEvent event)
+	public void preInit(FMLPreInitializationEvent event)
 	{
 		chocoboHeight = 1.9F;
 		chocoboWidth = 1.3F;
@@ -346,7 +343,7 @@ public class ModChocoCraft
 	}
 
 	@EventHandler
-	public void postLoadChocoCraft(FMLPostInitializationEvent event) {}
+	public void postInit(FMLPostInitializationEvent event) {}
 
 //	// initialising methods
 //	private void createCreativeTab()
